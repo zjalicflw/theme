@@ -1,22 +1,17 @@
-
-# kube.zsh-theme
-
 COLOR_WHITE="%{$fg[white]%}"
-COLOR_YELLOW="%{$fg[yellow]%}"
-COLOR_CYAN="%{$fg[cyan]%}"
-COLOR_BLUE="%{$fg[blue]%}"
-COLOR_MAGENTA="%{$fg[magenta]%}"
-COLOR_GREEN="%{$fg[green]%}"
-COLOR_RED="%{$fg[red]%}"
+COLOR_PURPLE="%{$FG[063]%}"
+COLOR_BLUE="%{$FG[026]%}"
+COLOR_ORANGE="%{$FG[208]%}"
+COLOR_ROSE="%{$FG[223]%}"
+COLOR_LIME="%{$FG[113]%}"
 
-ZSH_THEME_GIT_PROMPT_PREFIX="$COLOR_WHITE:$COLOR_BLUE"
+ZSH_THEME_GIT_PROMPT_PREFIX="$COLOR_PURPLE "
 ZSH_THEME_GIT_PROMPT_SUFFIX=""
-ZSH_THEME_GIT_PROMPT_CLEAN=" $COLOR_GREEN✓"
-ZSH_THEME_GIT_PROMPT_DIRTY=" $COLOR_RED✗"
+ZSH_THEME_GIT_PROMPT_CLEAN="$COLOR_GREEN ✓ "
+ZSH_THEME_GIT_PROMPT_DIRTY="$COLOR_RED ✗ "
 
-TIME="$COLOR_WHITE"["$COLOR_YELLOW%T$COLOR_WHITE"]"%{$reset_color%}"
-KUBE="$COLOR_WHITE"["$COLOR_MAGENTA$(kubectl config current-context)$COLOR_WHITE"]
-DIR="$COLOR_CYAN%~\$(git_prompt_info) "
-PROMPT="$COLOR_WHITE➭ "
+TIME="$COLOR_LIME%T | "
+KUBE="$COLOR_BLUE? $(kubectl config current-context | awk -F '/' '{print $NF}') "
+DIR="$COLOR_ROSE %~ \$(git_prompt_info)"
 
-PROMPT="$TIME$KUBE$DIR$PROMPT%{$reset_color%}" 
+PROMPT="$TIME$KUBE$DIR%{$reset_color%}"
